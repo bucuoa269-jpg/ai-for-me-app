@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-cream text-ink antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    background-image: radial-gradient(
+        55% 50% at 12% -5%,
+        rgba(124, 107, 245, 0.1) 0%,
+        rgba(124, 107, 245, 0) 60%
+      ),
+      radial-gradient(
+        45% 45% at 95% -8%,
+        rgba(246, 197, 96, 0.1) 0%,
+        rgba(246, 197, 96, 0) 55%
+      );
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    @apply bg-iris-200 text-ink;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-black/[0.06];
+  }
+
+  .card {
+    @apply rounded-2xl border border-black/[0.06] bg-white/80 shadow-soft transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:-translate-y-0.5 hover:shadow-lift hover:border-iris-200;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border border-black/[0.07] bg-white/70 px-2.5 py-1 text-xs text-ink-mute;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 select-none;
+  }
+
+  .btn-primary {
+    @apply btn bg-ink text-white hover:bg-ink-soft active:scale-[0.98];
+  }
+
+  .btn-iris {
+    @apply btn bg-iris-500 text-white hover:bg-iris-600 active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply btn border border-black/[0.08] bg-white/60 text-ink-soft hover:bg-white hover:border-iris-200;
+  }
+
+  .section-title {
+    @apply text-xl font-semibold tracking-tight text-ink sm:text-2xl;
+  }
+}
+
+/* 细腻滚动条（克制） */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.14);
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}

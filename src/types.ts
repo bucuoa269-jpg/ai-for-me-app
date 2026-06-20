@@ -148,3 +148,17 @@ export interface ChangelogEntry {
 
 /** 用户本地收藏状态 */
 export type UserActionStatus = '想做' | '已读' | '已行动' | '已放弃';
+
+/** 联网采集 + 链接核验的线索链接库条目（内容未逐条人工核验，按域名信源分级） */
+export interface LinkLibraryItem {
+  id: string;
+  title: string;
+  url: string;
+  domain: string;
+  media: string;
+  sourceLevel: SourceLevel;
+  track: string; // taxonomy track id
+  kind: 'opportunity' | 'interview' | 'news';
+  snippet: string;
+  collectedAt: string;
+}

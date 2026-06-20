@@ -8,6 +8,7 @@ const links = [
   { to: '/cities', label: '城市地图' },
   { to: '/learning', label: 'AI 学习' },
   { to: '/risk-radar', label: '风险雷达' },
+  { to: '/links', label: '链接库' },
   { to: '/submit', label: '提交线索' },
   { to: '/about', label: '关于' },
 ];

@@ -9,6 +9,7 @@ import InterviewsPage from './pages/InterviewsPage';
 import CitiesPage from './pages/CitiesPage';
 import LearningPage from './pages/LearningPage';
 import RiskRadarPage from './pages/RiskRadarPage';
+import LinksPage from './pages/LinksPage';
 import SubmitPage from './pages/SubmitPage';
 import AboutPage from './pages/AboutPage';
 import ChangelogPage from './pages/ChangelogPage';
@@ -35,6 +36,7 @@ export default function App() {
             <Route path="/cities" element={<CitiesPage />} />
             <Route path="/learning" element={<LearningPage />} />
             <Route path="/risk-radar" element={<RiskRadarPage />} />
+            <Route path="/links" element={<LinksPage />} />
             <Route path="/submit" element={<SubmitPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/changelog" element={<ChangelogPage />} />

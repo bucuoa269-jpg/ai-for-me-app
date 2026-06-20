@@ -9,6 +9,7 @@ import { opportunities } from '../data/opportunities';
 import { interviews } from '../data/interviews';
 import { cities } from '../data/cities';
 import { learningResources } from '../data/learning';
+import linkLibrary from '../data/linkLibrary.json';
 
 const quickEntries = [
   { to: '/submit', emoji: '✍️', label: '提交线索' },
@@ -29,7 +30,7 @@ export default function HomePage() {
     { label: '城市地图', value: cities.length, to: '/cities', emoji: '🗺️', tone: 'text-emerald-700' },
     { label: '学习资源', value: learningResources.length, to: '/learning', emoji: '📚', tone: 'text-sky-700' },
     { label: '风险提醒', value: riskCount, to: '/risk-radar', emoji: '⚠️', tone: 'text-rose-600' },
-    { label: '本地收藏', value: '私密', to: '/opportunities', emoji: '★', tone: 'text-gold-600' },
+    { label: '核验链接', value: linkLibrary.length, to: '/links', emoji: '🔗', tone: 'text-gold-600' },
   ];
 
   return (

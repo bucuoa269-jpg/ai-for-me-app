@@ -27,6 +27,7 @@ export default function Footer() {
               <li><Link to="/interviews" className="hover:text-ink">深访矿脉</Link></li>
               <li><Link to="/cities" className="hover:text-ink">城市地图</Link></li>
               <li><Link to="/learning" className="hover:text-ink">AI 学习路线</Link></li>
+              <li><Link to="/links" className="hover:text-ink">线索链接库</Link></li>
             </ul>
           </div>
 

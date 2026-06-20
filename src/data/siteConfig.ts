@@ -26,7 +26,7 @@ export const siteConfig = {
   disclaimer:
     '本线索仅供信息参考，不构成投资、就业、创业或收益承诺。本站不保证任何收益。请以官方页面为准，并结合自身情况判断风险。',
 
-  version: 'v1.2.0',
+  version: 'v1.2.1',
 } as const;
 
 export type SiteConfig = typeof siteConfig;

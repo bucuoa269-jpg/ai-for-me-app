@@ -77,7 +77,18 @@ export default function InterviewCard({ interview }: { interview: Interview }) {
           </div>
           <div className="flex items-center gap-2 text-xs text-ink-mute">
             <span className="chip">{it.sourceLink.type}</span>
-            <span>{it.sourceLink.title}</span>
+            {it.sourceLink.url ? (
+              <a
+                href={it.sourceLink.url}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="text-iris-700 underline-offset-2 hover:underline"
+              >
+                {it.sourceLink.title} ↗
+              </a>
+            ) : (
+              <span>{it.sourceLink.title}</span>
+            )}
           </div>
         </div>
       )}

@@ -1,5 +1,6 @@
 import type { Opportunity, OpportunityStatus, SourceLevel } from '../types';
 import { getScore } from './scoring';
+import { getTrack } from './taxonomy';
 
 export interface FilterState {
   query: string;
@@ -9,6 +10,7 @@ export interface FilterState {
   suitableFor: string;
   status: OpportunityStatus | '全部';
   sourceLevel: SourceLevel | '全部';
+  track: string; // '全部' | track.id
   sort: 'score' | 'newest' | 'urgency';
 }
 
@@ -20,6 +22,7 @@ export const defaultFilters: FilterState = {
   suitableFor: '全部',
   status: '全部',
   sourceLevel: '全部',
+  track: '全部',
   sort: 'score',
 };
 
@@ -70,6 +73,7 @@ export function applyFilters(items: Opportunity[], f: FilterState): Opportunity[
     if (f.suitableFor !== '全部' && !o.suitableFor.includes(f.suitableFor)) return false;
     if (f.status !== '全部' && o.status !== f.status) return false;
     if (f.sourceLevel !== '全部' && o.sourceLevel !== f.sourceLevel) return false;
+    if (f.track !== '全部' && getTrack(o).id !== f.track) return false;
     return true;
   });
 
@@ -97,6 +101,7 @@ export function isActiveFilter(f: FilterState): boolean {
     f.category !== '全部' ||
     f.suitableFor !== '全部' ||
     f.status !== '全部' ||
-    f.sourceLevel !== '全部'
+    f.sourceLevel !== '全部' ||
+    f.track !== '全部'
   );
 }

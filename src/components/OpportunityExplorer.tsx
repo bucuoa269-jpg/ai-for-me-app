@@ -5,17 +5,21 @@ import { applyFilters, defaultFilters, type FilterState } from '../lib/filters';
 import SearchBox from './SearchBox';
 import FilterBar from './FilterBar';
 import OpportunityList from './OpportunityList';
+import CategoryOverview from './CategoryOverview';
 
 export default function OpportunityExplorer({
   items,
   limit,
   showFilters = true,
+  showOverview = false,
   initialFilters,
 }: {
   items: Opportunity[];
   /** 限制展示数量（首页用），并显示「查看全部」 */
   limit?: number;
   showFilters?: boolean;
+  /** 是否显示「线索分类汇总」总览面板 */
+  showOverview?: boolean;
   initialFilters?: Partial<FilterState>;
 }) {
   const [filters, setFilters] = useState<FilterState>({
@@ -28,6 +32,14 @@ export default function OpportunityExplorer({
 
   return (
     <div className="space-y-4">
+      {showOverview && (
+        <CategoryOverview
+          items={items}
+          activeTrack={filters.track}
+          onSelectTrack={(track) => setFilters((f) => ({ ...f, track }))}
+        />
+      )}
+
       {showFilters && (
         <div className="space-y-3">
           <SearchBox value={filters.query} onChange={(q) => setFilters((f) => ({ ...f, query: q }))} />

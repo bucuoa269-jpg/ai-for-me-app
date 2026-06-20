@@ -39,7 +39,7 @@ export default function OpportunitiesPage() {
       </div>
 
       {tab === 'all' ? (
-        <OpportunityExplorer items={opportunities} showFilters />
+        <OpportunityExplorer items={opportunities} showFilters showOverview />
       ) : (
         <OpportunityList
           items={favItems}

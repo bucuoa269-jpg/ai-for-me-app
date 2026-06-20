@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI For Me</title>
+    <script>
+      // GitHub Pages SPA 兜底：把直接访问的子路径转成 HashRouter 形式，弹回应用。
+      (function () {
+        var base = '/ai-for-me-app/';
+        var loc = window.location;
+        var rest = loc.pathname.indexOf(base) === 0 ? loc.pathname.slice(base.length) : '';
+        rest = rest.replace(/^\/+|\/+$/g, '');
+        var target = base + (rest ? '#/' + rest : '') + loc.search;
+        loc.replace(target);
+      })();
+    </script>
+  </head>
+  <body>
+    正在跳转到 AI For Me…
+  </body>
+</html>
